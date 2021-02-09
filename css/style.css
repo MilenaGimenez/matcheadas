@@ -1,0 +1,202 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.principal-box{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title{
+    border: 1px solid red;
+    font-size: 2.5rem;
+}
+
+.secundary-box{
+    border: 1px solid orange;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control-box{
+    border: 1px solid green;
+    display: flex;
+    justify-content: space-between;    
+    width: 400px;
+    padding: 10px;
+}
+
+.points-box, .help-restart-box{
+    border: 1px solid greenyellow;
+    display: flex;    
+}
+
+.combo-text, .combo-points{
+    margin: 5px;    
+}
+
+.help-button, .restart-button{
+    margin: 5px;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.game-box{
+    width: 400px;
+    height: 400px;
+    border: 1px solid green;
+    margin: 20px 0;
+}
+
+.time-box{
+    border: 1px solid green;
+    padding: 10px;
+}
+
+.time-icon, .time-number{
+    padding: 0 10px;
+}
+
+/* Welcome box */
+
+.hidden-welcome-box{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;       
+    /* background-color: rgba(0, 0, 0, 0.4);   */  
+    
+    display: none;
+}
+
+.welcome-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    width: 30%;
+    border: 1px solid black;
+}
+.welcome-title{
+    margin: 20px 0;
+    font-size: 1.8rem;
+}
+
+.instructions-box, .controls-box, .play-box{
+    border: 1px solid red;   
+    margin: 10px 15px;
+}
+
+.play-button{
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+
+/* Level box */
+
+.hidden-level-box{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;       
+    /* background-color: rgba(0, 0, 0, 0.4);   */  
+
+    display: none;
+}
+
+.level-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    width: 30%;
+    border: 1px solid black;
+}
+
+.level-title{
+    margin: 20px 0;
+    font-size: 1.8rem;
+}
+
+.difficulty-box, .select-difficulty{
+    border: 1px solid red;   
+    margin: 10px 15px;
+}
+
+.button-difficulty{
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+
+/* Restart box */
+
+.hidden-restart-box{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;       
+    /* background-color: rgba(0, 0, 0, 0.4);   */  
+
+}
+
+.restart-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    width: 30%;
+    border: 1px solid black;
+
+    display: none;
+}
+
+.restart-title{
+    margin: 20px 0;
+    font-size: 1.8rem;
+}
+
+.warning-box, .select-restart{
+    border: 1px solid red;   
+    margin: 10px 15px;
+}
+
+.button-cancel, .button-restart{
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
