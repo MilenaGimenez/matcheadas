@@ -1,54 +1,58 @@
+/* const root = document.getElementById('restart-box')
+const restartButton = document.getElementById('restart-button');
+
+restartButton.addEventListener('click', (e) => {
+  
+  swal("¡Perderás todo tu puntaje acumulado!", {
+    title: "¿Reiniciar juego?",
+    buttons: ["Cancelar", "Nuevo juego"],
+  }); 
+  
+})
+ */
+
+
 //GRILLA
 
-const gridBox = document.getElementById('grid-box');
+const tab = document.getElementById('grid-box');
 
-let icons = ["🌎", "⭐", "🌙", "🚀", "🌀"];
-let level = 5;
+let items = ["🌎", "⭐", "🌙", "🚀", "🌀"];
 
-// Función para crear la grilla
+/* let dificulty = 0; */
 
-const createGrid = () => {
-    gridBox.innerHTML = "";
+const facil = 9;
+const normal = 8;
+const dificil = 7;
 
-    for(let i = 0; i < level; i++){
-        for(let j = 0; j < level; j++){
-            const createIcon = document.createElement("p");
-            createIcon.setAttribute("id", `${i}-${j}`);
-            createIcon.innerHTML = icons[iconRandom(0, 5)];
-            gridBox.appendChild(createIcon);
+const tamanoGrilla = (nivel, div) => {
+    /* div.style.width = `calc(32rem / ${nivel}) - 1.02rem`
+    div.style.height = `calc(32rem / ${nivel}) - 1.02rem` */
+    div.style.width = `calc(500px / ${nivel}) - 1.02rem`
+    div.style.height = `calc(500px / ${nivel}) - 1.02rem`
+    
+}
+
+const crearTablero = (nivel) => {
+    for (let i = 0; i < nivel; i++) {        
+        for (let j = 0; j < nivel; j++) {
+            const newd = document.createElement("div");
+            tamanoGrilla(nivel, newd)
+            newd.innerHTML = items[getRandom(0, 4)];
+            tab.appendChild(newd);
+            newd.style.width = `${500/nivel}px`
+            newd.style.height = `${500/nivel}px`
         }
     }
-    getIcons()
 };
 
-//Función para darle eventos a los icons
-const getIcons = () => {
-    const icon = document.getElementsByTagName("p")
-    for(let i = 0; i < icon.length; i++){
-        icon[i].addEventListener('click', (icon) => {
-            console.log(icon)
-        })
-        }
-}
-
-// Función para generar icons aleatorios
-
-const iconRandom = (min, max) => {
+const getRandom = (min, max) => {
     let random = Math.random();
     return Math.floor(random * (max - min)) + min;
-};
-const ramdom = iconRandom(0, 4);
-
-createGrid()
-
-
-//que cada emogi sea clicleable
-const getItem = () => {
-  const item = document.getElementsByTagName("p")
-  console.log(item)
-  for(let i=0; i < item.length; i++){//item.length nos traemos los 25 p (osea todos los emogis en total suponiendo ser 5)
-    item[i].addEventListener('click', (item) => {
-      console.log(item)
-    });    
-  }
 }
+
+const obtenerEmoj = console.log(`posicion:`, items[getRandom(0, 4)])
+
+
+//getRandom(6, 10);
+
+crearTablero(dificil);
