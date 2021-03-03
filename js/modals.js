@@ -14,8 +14,53 @@ const welcomeModal = () => {
         button: "A jugar!",
         closeOnClickOutside: false,
         closeOnEsc: false,
-        //className: "red-bg",
-      });
+      }).then((value) => {
+          if(value){
+            levelModal()
+          }
+      })
 }
 
 welcomeModal()
+
+const levelModal = () => {
+    swal({
+        title: "Nuevo Juego",    
+        text: "Selecciona una dificultad",
+        buttons: {
+            facil:{
+                text: "Fácil",
+                value: "facil"
+            },
+            normal:{
+                text: "Normal",
+                value: "normal"
+            },
+            dificil:{
+                text: "Difícil",
+                value: "dificil"
+            },
+        },
+        closeOnClickOutside: false,
+        closeOnEsc: false,
+      })
+      .then((value) => {        
+          switch (value){
+              case "facil":                  
+              crearTablero(facil);
+                breack;
+
+              case "normal":   
+              crearTablero(normal);        
+                breack;
+
+              case "dificil":  
+              crearTablero(dificil);           
+                breack;
+                default:
+          }
+          /* root.innerHTML = longitud */
+      })
+}
+
+/* levelModal() */

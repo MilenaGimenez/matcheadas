@@ -24,11 +24,14 @@ const facil = 9;
 const normal = 8;
 const dificil = 7;
 
+let level;
+
 const tamanoGrilla = (nivel, div) => {
     /* div.style.width = `calc(32rem / ${nivel}) - 1.02rem`
     div.style.height = `calc(32rem / ${nivel}) - 1.02rem` */
-    div.style.width = `calc(500px / ${nivel}) - 1.02rem`
-    div.style.height = `calc(500px / ${nivel}) - 1.02rem`
+    /* div.style.width = `calc(500px / ${nivel}) - 1.02rem`
+    div.style.height = `calc(500px / ${nivel}) - 1.02rem` */
+    div.style.width = `${500 / level}px`;
     
 }
 
@@ -50,9 +53,31 @@ const getRandom = (min, max) => {
     return Math.floor(random * (max - min)) + min;
 }
 
-const obtenerEmoj = console.log(`posicion:`, items[getRandom(0, 4)])
+/* const obtenerEmoj = console.log(`posicion:`, items[getRandom(0, 4)]) */
 
 
 //getRandom(6, 10);
 
-crearTablero(dificil);
+crearTablero();
+
+
+//Timer no funciona
+/* const contador = document.getElementById('time-number')
+
+let time = 30
+
+setInterval(()=>{
+    if(time > -1){
+        contador.innerHTML = time
+        time--
+    }else{
+        alert('juego terminado')
+        //swal juego terminado
+        return
+    }
+    function myStopFunction(){
+        clearInterval(time)
+    }
+}, 1000)
+
+myStopFunction() */
