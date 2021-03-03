@@ -323,7 +323,8 @@ body{
 .swal-button {    
     border-radius: 10px;
     background-color: rgb(226, 8, 8);
-    font-size: 0.8rem;       
+    font-size: 0.8rem; 
+    color: white;      
   }
 
   .swal-button:not([disabled]):hover {

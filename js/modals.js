@@ -23,6 +23,8 @@ const welcomeModal = () => {
 
 welcomeModal()
 
+// Modal level
+
 const levelModal = () => {
     swal({
         title: "Nuevo Juego",    
@@ -64,3 +66,47 @@ const levelModal = () => {
 }
 
 /* levelModal() */
+
+const restartButton = document.getElementById('restart-button');
+
+const restartGame = () => {
+    swal({
+        title: "¿Reiniciar juego?",    
+        text: "¡Perderás todo tu puntaje acumulado!",
+        buttons: {
+            cancelar:{
+                text: "Cancelar",
+                value: "cancelar"
+            },
+            nuevojuego:{
+                text: "Nuevo juego",
+                value: "nuevojuego"
+            },            
+        },        
+        closeOnClickOutside: false,
+        closeOnEsc: false,
+      })
+      .then((value) => {        
+        switch (value){
+            case "cancelar":                  
+            swal.close()
+              breack;
+
+            case "nuevojuego":   
+            levelModal()
+              breack;
+              default:
+        }        
+    })
+};
+
+
+restartButton.addEventListener('click', () => {
+    restartGame()
+});
+
+const helpButton = document.getElementById('help-button');
+
+helpButton.addEventListener('click', () => {
+    welcomeModal()
+})
