@@ -310,3 +310,38 @@ body{
         height: 25rem;        
     } */
 }
+
+/* Modales */
+
+.swal-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.swal-modal {
+    background-color: white;
+    border-radius: 10px;
+    border: 5px inset #e9c00a;
+    font-family: 'Rajdhani', sans-serif;    
+}
+
+.swal-title {    
+    font-size: 1.8rem;       
+}
+
+.swal-text {   
+    text-align: center;
+    font-size: 1rem;    
+}
+
+.swal-button {    
+    border-radius: 10px;
+    background-color: rgb(226, 8, 8);
+    font-size: 0.8rem; 
+    color: white;      
+  }
+
+  .swal-button:not([disabled]):hover {
+    border-radius: 10px;
+    background-color: rgb(158, 1, 1);
+    font-size: 0.8rem;
+}
