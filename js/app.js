@@ -13,7 +13,9 @@ let time;
 let restTime;
 
 
+
 let optionWelcome = true;
+
 
 
 let level = 0;
@@ -21,6 +23,7 @@ let level = 0;
 
 const tamanoGrilla = (nivel, div) => {
     div.style.width = `calc(32rem / ${nivel}) - 1.02rem`
+
     div.style.height = `calc(32rem / ${nivel}) - 1.02rem` 
 }
 
@@ -39,6 +42,7 @@ const crearTablero = () => {
             newd.style.width = `${500/level}px`
             newd.style.height = `${500/level}px`
             twemoji.parse(document.body);
+
         }
     };
     restTime = setInterval(myTimer, 1000);
@@ -52,6 +56,7 @@ const getRandom = (min, max) => {
 
 
 window.onload = welcomeModal();
+
 
 
 

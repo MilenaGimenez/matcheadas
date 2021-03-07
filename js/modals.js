@@ -36,7 +36,9 @@ const levelModal = () => {
                 break;
                 default:
           }
+
           crearTablero();          
+
       })
 }
 
