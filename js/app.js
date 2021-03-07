@@ -16,7 +16,7 @@ restartButton.addEventListener('click', (e) => {
 
 const tab = document.getElementById('grid-box');
 
-let items = ["🌎", "⭐", "🌙", "🚀", "🌀"];
+let items = ["🌎", "⭐", "🌙", "🚀", "🪐"];
 
 /* let dificulty = 0; */
 
@@ -27,23 +27,27 @@ const dificil = 7;
 let level;
 
 const tamanoGrilla = (nivel, div) => {
-    /* div.style.width = `calc(32rem / ${nivel}) - 1.02rem`
-    div.style.height = `calc(32rem / ${nivel}) - 1.02rem` */
+    div.style.width = `calc(32rem / ${nivel}) - 1.02rem`
+    div.style.height = `calc(32rem / ${nivel}) - 1.02rem`
     /* div.style.width = `calc(500px / ${nivel}) - 1.02rem`
     div.style.height = `calc(500px / ${nivel}) - 1.02rem` */
-    div.style.width = `${500 / level}px`;
-    
+    div.style.width = `${500 / level}px`;    
 }
 
 const crearTablero = (nivel) => {
+    while (tab.firstChild) {
+        tab.removeChild(tab.firstChild);
+    }
     for (let i = 0; i < nivel; i++) {        
         for (let j = 0; j < nivel; j++) {
             const newd = document.createElement("div");
             tamanoGrilla(nivel, newd)
-            newd.innerHTML = items[getRandom(0, 4)];
+            newd.innerHTML = items[getRandom(0, 5)];
             tab.appendChild(newd);
             newd.style.width = `${500/nivel}px`
             newd.style.height = `${500/nivel}px`
+            twemoji.parse(document.body);
+
         }
     }
 };
@@ -58,7 +62,7 @@ const getRandom = (min, max) => {
 
 //getRandom(6, 10);
 
-crearTablero();
+/* crearTablero(); */
 
 
 //Timer no funciona
