@@ -31,8 +31,7 @@ const tamanoGrilla = (nivel, div) => {
     div.style.height = `calc(32rem / ${nivel}) - 1.02rem`
     /* div.style.width = `calc(500px / ${nivel}) - 1.02rem`
     div.style.height = `calc(500px / ${nivel}) - 1.02rem` */
-    /* div.style.width = `${500 / level}px`; */
-    
+    div.style.width = `${500 / level}px`;    
 }
 
 const crearTablero = (nivel) => {
@@ -48,6 +47,7 @@ const crearTablero = (nivel) => {
             newd.style.width = `${500/nivel}px`
             newd.style.height = `${500/nivel}px`
             twemoji.parse(document.body);
+
         }
     }
 };
