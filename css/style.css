@@ -42,7 +42,7 @@ body{
 .control-box{    
     display: flex;
     justify-content: space-between;    
-    width: 100%;
+    width: 32rem;
     padding: 10px;
     background-color: rgb(226, 8, 8);
     border-radius: 10px;
@@ -115,6 +115,10 @@ body{
     background-color: rgb(226, 8, 8);
     border-radius: 10px;
     border: 5px inset #e9c00a;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .time-icon, .time-number{
@@ -122,8 +126,10 @@ body{
     font-size: 1.2rem;
     color: #faeeb9;
     font-family: 'Rajdhani', sans-serif;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }
-
 
 /* Welcome box - Level box - Restart box*/
 
