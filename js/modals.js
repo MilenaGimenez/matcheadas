@@ -61,6 +61,7 @@ const levelModal = () => {
                 breack;
                 default:
           }
+          crearTablero();
           /* root.innerHTML = longitud */
       })
 }
