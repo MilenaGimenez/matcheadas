@@ -13,37 +13,40 @@
     <title>MatcheADAs</title>
 </head>
 <body>
-    <section class="principal-box"> 
+    <!-- Caja principal -->
+    <main class="principal-box"> 
+        <!-- Isologotipo -->
         <img src="./assets/img/animacion-logo.gif" alt="Logo Matcheadas" class="title-logo">
 
-        <article class="secundary-box">
-            <div class="control-box">                
-                <div class="points-box">
+        <!-- Caja secundaria -->
+        <section class="secundary-box">
+            <article class="control-box">     
+                <!-- Caja combos y puntos --> 
+                <article class="points-box">
                     <p class="combo-text">Combo <span class="combo-text" id="combo-text">x1</span></p>
                     <p class="combo-points">Puntos: <span class="combo-points" id="combo-points">1200</span></p>
-                </div>
-                <div class="help-restart-box">
+                </article>
+                <!-- Caja ayuda -->
+                <article class="help-restart-box">
                     <button type="button" class="help-button" id="help-button"><i class="fas fa-info-circle"></i></button>
                     <button type="button" class="restart-button" id="restart-button"><i class="fas fa-redo-alt"></i></button>
-                </div>                
-            </div>
+                </article>  
+            </article>
 
+            <!--Caja grilla -->
+            <article class="grid-box" id="grid-box"></article>
             
-
-                <div class="grid-box" id="grid-box"></div>
-
-            
-
-            <div class="time-box">
+            <!-- Caja tiempo -->
+            <article class="time-box">
                 <p class="time-icon"><i class="fas fa-hourglass-half"></i><span class="time-number" id="time-number"> 00:30</span></p>
-            </div>
-        </article>
-    </section>    
-    
+            </article>
+        </section>
+    </main>
 
-
+    <!-- Librerias Twemoji, Sweetalert -->
     <script src="https://twemoji.maxcdn.com/v/13.0.1/twemoji.min.js" integrity="sha384-5f4X0lBluNY/Ib4VhGx0Pf6iDCF99VGXJIyYy7dDLY5QlEd7Ap0hICSSZA1XYbc4" crossorigin="anonymous"></script>   
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Scripts Js modals y app -->
     <script src="js/modals.js"></script>
     <script src="js/app.js"></script>
 </body>

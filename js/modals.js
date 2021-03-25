@@ -1,6 +1,7 @@
-// Modal level
+//Modales de Sweet Alert
 
-const levelModal = () => {    
+//Modal seleccionar dificultad
+const levelModal = () => {  
     swal({
         title: "Nuevo Juego",    
         text: "Selecciona una dificultad",
@@ -36,14 +37,11 @@ const levelModal = () => {
                 break;
                 default:
           }
-
-          crearTablero();          
-
+          generateGrid();          
       })
 }
 
 //Modal bienvenida
-
 const welcomeModal = () => {
     stopTimer();
     swal({
@@ -65,10 +63,9 @@ const welcomeModal = () => {
 
 
 //Modal Restart
-
 const restartGame = () => {
-    optionWelcome = true;
-stopTimer();
+    welcome = true;
+    stopTimer();
     swal({
         title: "¿Reiniciar juego?",    
         text: `Perderás todo tu puntaje acumulado`,
@@ -82,7 +79,7 @@ stopTimer();
       .then((value) => {        
         switch (value){
             case null:  
-            restTime = setInterval(myTimer, 1000);
+            timePause = setInterval(startTimer, 1000);
               break;
 
             case true:   
@@ -94,9 +91,8 @@ stopTimer();
 
 
 //Modal juego finalizado
-
 const finishGame = () => {    
-stopTimer();
+    stopTimer();
     swal({
         title: "¡Juego terminado!", 
         text: `Puntaje Final: 0`,           
@@ -120,8 +116,9 @@ stopTimer();
               break;
 
             case "reiniciar":   
-            crearTablero(level);
+            generateGrid(level);
             break;
         }        
     })
+    
 };
