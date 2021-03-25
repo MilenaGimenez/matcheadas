@@ -1,3 +1,4 @@
+/* Estilos generales */
 *{
     padding: 0;
     margin: 0;
@@ -13,20 +14,18 @@ body{
     height: 100vh;
 }
 
+
+/* Cajas principales y título */
 .principal-box{    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* height: 100vh;   */ 
-    /* margin: 10px 0;  */
     margin-top: 2.5rem; 
-    /* margin-top: 3%;  */
 }
 
 .title-logo{
-    width: 20rem;    
-    /* margin: 20px 0; */
+    width: 20rem; 
 }
 
 .secundary-box{    
@@ -42,7 +41,7 @@ body{
 .control-box{    
     display: flex;
     justify-content: space-between;    
-    width: 100%;
+    width: 32rem;
     padding: 10px;
     background-color: rgb(226, 8, 8);
     border-radius: 10px;
@@ -97,24 +96,16 @@ body{
     transition: 0.2s;   
 }
 
-/* Caja game */
-
-/* .game-box{
-    width: 100%;    
-    height: 25rem; 
-    margin: 20px 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    border: 5px inset #e9c00a;    
-} */
-
 /* Caja time */
-
 .time-box{    
     padding: 10px;
     background-color: rgb(226, 8, 8);
     border-radius: 10px;
     border: 5px inset #e9c00a;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .time-icon, .time-number{
@@ -125,146 +116,17 @@ body{
 }
 
 
-/* Welcome box - Level box - Restart box*/
-
-.hidden-welcome-box{    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;  
-    font-family: 'Rajdhani', sans-serif;
-    color: #faeeb9;    
-    background-color: rgba(0, 0, 0, 0.4);  
-    
-    display: none;
-}
-
-.hidden-level-box{    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;  
-    font-family: 'Rajdhani', sans-serif;
-    color: #faeeb9;         
-    background-color: rgba(0, 0, 0, 0.4);    
-
-    display: none;
-}
-
-
-.hidden-restart-box{    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;       
-    font-family: 'Rajdhani', sans-serif;
-    color: #faeeb9;         
-    background-color: rgba(0, 0, 0, 0.4);
-
-    display: none;
-}
-
-.welcome-box, .level-box, .restart-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-    width: 40%;
-    background-color: rgb(226, 8, 8);
-    border-radius: 10px;
-    border: 5px inset #e9c00a;
-    
-}
-
 /* Estilos títulos y textos */
-
-.welcome-title, .level-title, .restart-title{
-    margin: 20px 0;
-    font-size: 1.8rem;
-}
-
-.instructions-box, .controls-box, .play-box, .difficulty-title, .select-difficulty, .warning-box, .select-restart{    
+.controls-box{    
     margin: 10px 15px;
     font-size: 1.1rem;    
 }
 
-/* Estilos de botones */
-
-.play-button, .button-difficulty, .button-cancel, .button-restart{
-    border: none;    
-    outline: none;
-    cursor: pointer;
-    font-family: 'Rajdhani', sans-serif;
-    color: #faeeb9; 
-    font-size: 1.1rem;
-    background-color: rgb(104, 9, 25);
-    padding: 12px 20px;
-    border-radius: 5px;    
-    margin: 10px 0;
-    
-}
-
-.play-button:hover, .button-difficulty:hover, .button-cancel:hover, .button-restart:hover{
-    border: none;    
-    outline: none;
-    cursor: pointer;
-    font-family: 'Rajdhani', sans-serif;
-    color: #faeeb9; 
-    font-size: 1.1rem;
-    background-color: rgb(153, 16, 39);
-    padding: 12px 20px;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Grilla */
-
-/* .grid-box{
-    display: flex;
-    flex-wrap: wrap;
-    width: 250px;
-}
-
-.grid-box p{
-    font-size: 35px;
-} */
-
+/* Estilos de la grilla y los emojis */
 .grid-box{
     display: flex;    
     width: 32rem;
     height: 32rem;
-    /* width: 500px;
-    height: 500px; */
     flex-wrap: wrap;    
     justify-content: center;
     align-items: center;
@@ -274,44 +136,26 @@ body{
     margin: 20px 0;
 }
 
-.grid-box > *{    
-    font-size: 2.5rem;     
-    display: flex;
-    align-items: center;
-    justify-content: center;  
-    border-radius: 50px;
-    transition: 0.3s;  
-    cursor: pointer;
-}
-
-.grid-box > *:hover{  
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.3); 
-    transition: 0.3s;
-}
-
-/* .grid-box img{
+.grid-box img{
     width: 100%;
-} */
-
-/* Responsive */
-
-@media (max-width: 500px){
-    .secundary-box{
-        padding: 0 1rem;
-    }
-
-    .control-box{ 
-        padding: 10px 1rem;                
-    }
-
-   /*  .game-box{
-        width: 100%;        
-        height: 25rem;        
-    } */
+    padding: 8px;  
+    border-radius: 10px; 
+    transition: 0.3s 
 }
 
-/* Modales */
+.grid-box img:hover{    
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.3s
+}
+
+.selected{
+    border: inset 3px #e9c00a;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+  }
+
+ /* Modales de Sweet Alert */
 
 .swal-overlay {
     background-color: rgba(0, 0, 0, 0.4);
@@ -344,4 +188,16 @@ body{
     border-radius: 10px;
     background-color: rgb(158, 1, 1);
     font-size: 0.8rem;
+}
+
+/* Responsive */
+
+@media (max-width: 500px){
+    .secundary-box{
+        padding: 0 1rem;
+    }
+
+    .control-box{ 
+        padding: 10px 1rem;                
+    }
 }

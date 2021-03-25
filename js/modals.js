@@ -1,31 +1,7 @@
-//MODAL BIENVENIDA
+//Modales de Sweet Alert
 
-const welcomeModal = () => {
-    swal({
-        title: "🚀 ¡Bienvenido/a! 🚀",    
-        text: `En MatcheADAs tu objetivo es juntar tres o más ítems del mismo tipo, ya sea en fila o columna. Para eso, selecciona un ítem y a continuación un ítem adyacente para intercambiarlos de lugar. 
-        
-        Si se forma un grupo, esos ítems se eliminarán y ganarás puuntos. ¡Sigue armando grupos de 3 o más antes de que se acabe el tiempo!
-        
-        Controles:
-        Click izquierdo: selección
-        Enter o Espacio: selección
-        Flechas o WASD: movimiento e intercambio`,
-        button: "A jugar!",
-        closeOnClickOutside: false,
-        closeOnEsc: false,
-      }).then((value) => {
-          if(value){
-            levelModal()
-          }
-      })
-}
-
-welcomeModal()
-
-// Modal level
-
-const levelModal = () => {
+//Modal seleccionar dificultad
+const levelModal = () => {  
     swal({
         title: "Nuevo Juego",    
         text: "Selecciona una dificultad",
@@ -49,64 +25,100 @@ const levelModal = () => {
       .then((value) => {        
           switch (value){
               case "facil":                  
-              crearTablero(facil);
-                breack;
+              level = 9;
+                break;
 
               case "normal":   
-              crearTablero(normal);        
-                breack;
+              level = 8;       
+                break;
 
               case "dificil":  
-              crearTablero(dificil);           
-                breack;
+              level = 7;           
+                break;
                 default:
           }
-          /* root.innerHTML = longitud */
+          generateGrid();          
       })
 }
 
-/* levelModal() */
-
-const restartButton = document.getElementById('restart-button');
-
-const restartGame = () => {
+//Modal bienvenida
+const welcomeModal = () => {
+    stopTimer();
     swal({
-        title: "¿Reiniciar juego?",    
-        text: "¡Perderás todo tu puntaje acumulado!",
-        buttons: {
-            cancelar:{
-                text: "Cancelar",
-                value: "cancelar"
-            },
-            nuevojuego:{
-                text: "Nuevo juego",
-                value: "nuevojuego"
-            },            
-        },        
+        title: "🚀 ¡Bienvenido/a! 🚀",    
+        text: `En MatcheADAs tu objetivo es juntar tres o más ítems del mismo tipo, ya sea en fila o columna. Para eso, selecciona un ítem y a continuación un ítem adyacente para intercambiarlos de lugar. 
+        
+        Si se forma un grupo, esos ítems se eliminarán y ganarás puuntos. ¡Sigue armando grupos de 3 o más antes de que se acabe el tiempo!
+        
+        Controles:
+        Click izquierdo: selección
+        Enter o Espacio: selección
+        Flechas o WASD: movimiento e intercambio`,
+        button: "A jugar!",
         closeOnClickOutside: false,
         closeOnEsc: false,
       })
+      .then(levelModal)    
+}
+
+
+//Modal Restart
+const restartGame = () => {
+    welcome = true;
+    stopTimer();
+    swal({
+        title: "¿Reiniciar juego?",    
+        text: `Perderás todo tu puntaje acumulado`,
+        buttons: {
+            cancel: "Cancelar",
+            confirm: "Nuevo Juego",
+        },
+        closeOnClickOutside: false,
+        closeOnEsc: false,
+    })
       .then((value) => {        
         switch (value){
-            case "cancelar":                  
-            swal.close()
-              breack;
+            case null:  
+            timePause = setInterval(startTimer, 1000);
+              break;
 
-            case "nuevojuego":   
-            levelModal()
-              breack;
-              default:
+            case true:   
+                levelModal();
+            break;            
         }        
     })
 };
 
 
-restartButton.addEventListener('click', () => {
-    restartGame()
-});
+//Modal juego finalizado
+const finishGame = () => {    
+    stopTimer();
+    swal({
+        title: "¡Juego terminado!", 
+        text: `Puntaje Final: 0`,           
+        buttons: {
+            newGame:{
+                text: "Nuevo juego",
+                value: "nuevojuego",
+            },
+            reiniciar:{
+                text: "Reiniciar",
+                value: "reiniciar",
+            },            
+        },
+        closeOnClickOutside: false,
+        closeOnEsc: false,
+    })
+      .then((value) => {        
+        switch (value){
+            case "nuevojuego":  
+            levelModal()
+              break;
 
-const helpButton = document.getElementById('help-button');
-
-helpButton.addEventListener('click', () => {
-    welcomeModal()
-})
+            case "reiniciar":   
+            generateGrid(level);
+            break;
+        }        
+    })
+    
+};
